@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from datetime import datetime, timedelta
 
-# Configurações globais – definindo o padrão para um ecossistema ágil
+# Configurações globais para o ecossistema InfoCoin
 MOEDAS = ['USD', 'EUR', 'BRL', 'GBP', 'JPY', 'CNY']
 API_KEY = os.getenv("EXCHANGE_API_KEY", "sua_api_key_default")
 BASE_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}"
