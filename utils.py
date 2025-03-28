@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from datetime import datetime, timedelta
 
-# Configurações gerais e constantes
+# Configurações globais – definindo o padrão para um ecossistema ágil
 MOEDAS = ['USD', 'EUR', 'BRL', 'GBP', 'JPY', 'CNY']
 API_KEY = os.getenv("EXCHANGE_API_KEY", "sua_api_key_default")
 BASE_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}"
@@ -11,7 +11,7 @@ API_URL = "https://api.exchangerate.host"
 
 def get_cotacao(moeda_base: str, moeda_destino: str) -> float:
     """
-    Retorna a cotação da moeda de origem para a moeda de destino.
+    Obtém a cotação da moeda de origem para a moeda de destino.
     """
     url = f"{BASE_URL}/latest/{moeda_base}"
     try:
@@ -26,7 +26,7 @@ def get_cotacao(moeda_base: str, moeda_destino: str) -> float:
 
 def get_historico(moeda_base: str, moeda_destino: str, dias: int) -> pd.DataFrame:
     """
-    Retorna um DataFrame com o histórico de cotações no período especificado.
+    Retorna um DataFrame com o histórico de cotações para o período especificado.
     """
     data_final = datetime.today()
     data_inicial = data_final - timedelta(days=dias)
