@@ -1,14 +1,11 @@
-# estrutura multipage do Streamlit
 # arquivo: app.py
 import streamlit as st
-from pathlib import Path
 
 st.set_page_config(page_title="InfoCoin", layout="wide")
 
-st.sidebar.title("🧭 Navegação")
-st.sidebar.page_link("app.py", label="🏠 Início", icon="🏠")
-st.sidebar.page_link("pages/conversor.py", label="💱 Conversor de Moedas", icon="🔁")
-st.sidebar.page_link("pages/historico.py", label="📈 Histórico de Cotações", icon="📊")
-
 st.title("💰 InfoCoin – Painel de Moedas Globais")
-st.markdown("Escolha uma funcionalidade no menu lateral para começar.")
+st.markdown("Escolha uma das páginas no menu lateral para começar.")
+
+# O Streamlit multipage não precisa de st.sidebar.page_link.
+# Basta criar a pasta pages/ e colocar os arquivos .py lá.
+# O próprio Streamlit gerencia o menu lateral automaticamente.
