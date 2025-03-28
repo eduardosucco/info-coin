@@ -11,8 +11,18 @@ BASE_URL = 'https://api.exchangerate.host/'
 
 def get_cotacao(moeda_base='USD', moeda_destino='BRL'):
     url = f"{BASE_URL}latest?base={moeda_base}&symbols={moeda_destino}"
-    resp = requests.get(url).json()
-    return resp['rates'][moeda_destino]
+    try:
+        resp = requests.get(url).json()
+        if 'rates' in resp and moeda_destino in resp['rates']:
+            return resp['rates'][moeda_destino]
+        else:
+            st.error("❌ Erro ao buscar cotação. Verifique as moedas ou tente novamente.")
+            st.json(resp)  # debug: mostra o que veio da API
+            return None
+    except Exception as e:
+        st.error(f"Erro ao consultar API: {e}")
+        return None
+
 
 def get_historico(moeda_base, moeda_destino, dias=30):
     data_final = datetime.today()
