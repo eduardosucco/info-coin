@@ -5,7 +5,9 @@ import plotly.express as px
 from datetime import datetime, timedelta
 
 # Configuração global da página
-st.set_page_config(page_title="Conversor & Histórico de Moedas", layout="wide", page_icon="💱")
+st.set_page_config(page_title="Conversor & Histórico de Moedas"
+                #    , layout="wide"
+                   , page_icon="💱")
 st.title("💱 Conversor de Moedas com Histórico")
 st.markdown("Realize conversões e visualize o histórico dos últimos 7 dias de forma intuitiva.")
 
