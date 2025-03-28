@@ -1,13 +1,7 @@
 import streamlit as st
 from utils import MOEDAS, get_cotacao
 
-st.set_page_config(
-    page_title="Conversor de Moedas",
-    page_icon="💱",
-    layout="wide"
-)
-
-st.title("💱 Conversor de Moedas")
+st.write("# Conversor de Moedas")
 
 col1, col2, col3 = st.columns(3)
 with col1:

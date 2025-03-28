@@ -2,13 +2,7 @@ import streamlit as st
 import plotly.express as px
 from utils import MOEDAS, get_historico
 
-st.set_page_config(
-    page_title="Histórico de Cotações",
-    page_icon="📈",
-    layout="wide"
-)
-
-st.title("📈 Histórico de Cotações")
+st.write("# Histórico de Cotações")
 
 col1, col2 = st.columns(2)
 with col1:
@@ -16,7 +10,7 @@ with col1:
 with col2:
     moeda_destino = st.selectbox("Moeda de destino", MOEDAS, key="hist_destino", index=MOEDAS.index("USD"))
 
-# Mapeamento inovador dos períodos para insights estratégicos
+# Mapeamento de períodos para insights estratégicos
 periodos = {
     "1d": 1,
     "3d": 3,
